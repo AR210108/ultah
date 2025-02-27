@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kue Ulang Tahun</title>
+    <style>
+        body {
+            background-color: #ffebf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .cake-container {
+            position: relative;
+        }
+
+        /* Kue */
+        .cake {
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(to bottom, #ffb74d, #e07b39);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lapisan kue */
+        .layer {
+            width: 180px;
+            height: 20px;
+            background: #f4c542;
+            position: absolute;
+            top: 30px;
+        }
+
+        .layer:nth-child(2) {
+            top: 60px;
+            background: #e07b39;
+        }
+
+        .cream {
+            width: 190px;
+            height: 25px;
+            background: #fff3e0;
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            border-radius: 10px;
+            box-shadow: inset 0px -5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lilin */
+        .candle {
+            width: 12px;
+            height: 45px;
+            background: red;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        /* Api lilin */
+        .flame {
+            width: 12px;
+            height: 18px;
+            background: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.3s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); opacity: 1; }
+            100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+        }
+
+        /* Animasi kue muncul */
+        @keyframes cakeAppear {
+            0% { opacity: 0; transform: translateY(100px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .cake-container {
+            animation: cakeAppear 2s ease-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cake-container">
+        <div class="cake">
+            <div class="cream"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
